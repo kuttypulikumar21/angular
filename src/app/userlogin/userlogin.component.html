@@ -1,0 +1,35 @@
+<p>
+  userlogin works!
+</p>
+<ul>
+  <li *ngFor = 'let mydata of maindata' (click)="myfunction(mydata)">
+<span>{{ mydata.id }}</span><span>{{ mydata.name }}</span>
+<div *ngIf="mydata.id else loading">
+  <div>
+My Id is {{ mydata.id }}
+  </div>
+</div>
+<ng-container *ngIf="mydata.id else loading">
+  <div>
+My Id is {{ mydata.id }}
+  </div>
+</ng-container>
+<ng-template #loading>
+  <div>Loading...</div>
+</ng-template>
+  </li>
+
+</ul>
+
+
+<ng-container *ngTemplateOutlet="greet">
+  
+</ng-container>
+<ng-template #greet>
+  <li *ngFor="let twodata of maindata">
+    {{twodata.id}}
+    {{twodata.name}}
+  </li>
+</ng-template>
+<!-- 
+<app-usersignup [starkdata]= "herodata"></app-usersignup> -->

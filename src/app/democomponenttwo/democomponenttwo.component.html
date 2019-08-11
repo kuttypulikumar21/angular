@@ -1,0 +1,12 @@
+<div class="itemlist">
+<div class="container">
+  <h2 class="themehead1">Mobile List</h2>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor = 'let list of mobilestocklist'>
+       <div class="addbtnwrap"><h3>{{ list.name }}<button class="addbtn">Add</button></h3></div>
+       <span class="stockavail">Only {{list.stock}} left</span>
+      </li>
+
+  </ul>
+</div>
+</div>
